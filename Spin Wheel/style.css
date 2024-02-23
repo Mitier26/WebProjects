@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0a1b18;
+}
+/* 전체적을 감싸는 것
+요소들을 중앙에 배치하기 위에 flex사용했다.
+그리고 기준점을 찾아주는 position이 있다. */
+.container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 껍질의 앞에 추가하는 요소
+위치는 container를 기준으로 움직인다.
+top 45 는 위에서 아래로 45px 위치이다.
+wheel의 전체 범위가 container */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    width: 30px;
+    height: 50px;
+    background: #f43648;
+    z-index: 1000;
+    /* clip-path: polygon 요소의 각 정점의 위치를 변경한다.
+    0 ~ 100 사이의 값을 가진다.
+    50% 는 중앙이다.
+    풀이 하면 가로중앙위, 가로65위치 세로 중앙, 가로중앙 세로 젤 아래 */
+    clip-path: polygon(50% 0%, 65% 50%, 50% 100%, 35% 50%);
+}
+
+/* container 바로 아래있는 부모
+가장 큰 원이다. */
+.wheel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #39ffe2;
+    box-shadow: 0 0 10px #39ffe2;
+    border-radius: 50%;
+    transition: transform 5s ease-in-out;
+    overflow: hidden;
+}
+/* 큰 원 안에 있는 줄들
+줄의 넓이가 2로 되어서 중심을 맞추기 위해 -1px 이 있다.
+회전을 주는데 45각도로 곱하기 값을 주었다 0 ~ 7
+calc() 는 괄호 안에 있는 것을 계산한 결과를 적용하는 것이다.
+여기에서는 변수를 만들고 사용하는 방법이 있다.
+var(--i) 변수는 html 에서 style: (--i:0)의 형태로 만들었다.
+filter: drop-shadow 는 요서에 그림자는 주는 것인데 글자에도 줄수 있다. */
+.wheel span {
+    position: absolute;
+    left: calc(50% - 1px);
+    width: 2px;
+    height: 100%;
+    background: #39ffe2;
+    transform: rotate(calc(45deg * var(--i)));
+    filter: drop-shadow(0 0 5px #39ffe2);
+}
+
+.spinBtn {
+    position: absolute;
+    inset: 140px;
+    background: #39ffe2;
+    color: #0a1b18;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+    filter: drop-shadow(0 0 5px #39ffe2);
+    user-select: none;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.number {
+    position: absolute;
+    inset: 0;
+    rotate: 22.5deg;
+}
+
+.number b {
+    position: absolute;
+    inset: 10px;
+    transform: rotate(calc(45deg * var(--i)));
+    text-align: center;
+    font-size: 2em;
+    color: #39ffe2;
+    font-weight: 500;
+    filter: drop-shadow(0 0 5px #39ffe2);
+}
+
+.inner {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    background: #0a1b18;
+    border: 3px solid #39ffe2;
+    transition: transform 10s ease-in-out;
+}

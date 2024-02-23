@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Spin Wheel</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- 전체를 감싸는 것 -->
+        <div class="container">
+            <!-- 가운데 있는 버튼 -->
+            <div class="spinBtn">Spin</div>
+            <!-- 외곽의 숫자들 -->
+            <div class="wheel">
+                <!-- span는 숫자 사이의 줄이다. -->
+                <span style="--i: 0"></span>
+                <span style="--i: 1"></span>
+                <span style="--i: 2"></span>
+                <span style="--i: 3"></span>
+                <span style="--i: 4"></span>
+                <div class="number">
+                    <b style="--i: 0">5</b>
+                    <b style="--i: 1">1</b>
+                    <b style="--i: 2">4</b>
+                    <b style="--i: 3">6</b>
+                    <b style="--i: 4">2</b>
+                    <b style="--i: 5">8</b>
+                    <b style="--i: 6">7</b>
+                    <b style="--i: 7">3</b>
+                </div>
+            </div>
+            <!-- 내부의 숫자들 -->
+            <div class="wheel inner">
+                <span style="--i: 0"></span>
+                <span style="--i: 1"></span>
+                <span style="--i: 2"></span>
+                <span style="--i: 3"></span>
+                <span style="--i: 4"></span>
+                <div class="number">
+                    <b style="--i: 0">5</b>
+                    <b style="--i: 1">1</b>
+                    <b style="--i: 2">4</b>
+                    <b style="--i: 3">6</b>
+                    <b style="--i: 4">2</b>
+                    <b style="--i: 5">8</b>
+                    <b style="--i: 6">7</b>
+                    <b style="--i: 7">3</b>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
