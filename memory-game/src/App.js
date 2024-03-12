@@ -18,7 +18,7 @@ function App() {
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
-  const [disabled, setDisable] = useState(false);
+  const [disabled, setDisabled] = useState(false);
 
   // shuffle cards
   const shuffleCards = () => {
@@ -41,6 +41,7 @@ function App() {
   // console.log(cards,turns);
   // handle a choice
   const handleChoice = (card) => {
+    if(!choiceTwo) {choiceOne ? setChoiceTwo(card) : setChoiceOne(card)}
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   }
 
@@ -48,7 +49,7 @@ function App() {
   useEffect(()=>{
     
     if(choiceOne && choiceTwo){
-      setDisable(true);
+      setDisabled(true);
 
       if(choiceOne.src === choiceTwo.src)
       {
@@ -80,7 +81,8 @@ function App() {
     setChoiceOne(null);
     setChoiceTwo(null);
     setTurns(prevTurns => prevTurns + 1);
-    setDisable(false);
+    // setTimeout(()=>setDisabled(false),20);
+    setDisabled(false);
   }
 
   useEffect(() => {
