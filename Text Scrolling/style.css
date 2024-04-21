@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500vh;
+    background: #111;
+}
+
+.paragraph {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 700px;
+    font-size: 2.25em;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+.paragraph span {
+    display: inline-block;
+    color: #333;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(500px) rotate(360deg) scale(1);
+}
+
+.paragraph span.reveal {
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff;
+    opacity: 1;
+    transform: translateY(0px) rotate(0deg) scale(1);
+}
