@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>이미지 슬라이드</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="slider">
+            <div class="thumbnail" data-text="사과" data-color="#fc4a55" onclick="showBigImage(this)">
+                <img src="apple.png" alt="">
+            </div>
+            <div class="thumbnail" data-text="용과" data-color="#fb6cb2" onclick="showBigImage(this)">
+                <img src="dragonfruit.png" alt="">
+            </div>
+            <div class="thumbnail" data-text="망고" data-color="#ffcc02" onclick="showBigImage(this)">
+                <img src="mango.png" alt="">
+            </div>
+            <div class="thumbnail" data-text="파인애플" data-color="#ffb42b" onclick="showBigImage(this)">
+                <img src="pineapple.png" alt="">
+            </div>
+            <div class="thumbnail" data-text="수박" data-color="#92ba3c" onclick="showBigImage(this)">
+                <img src="wathermelon.png" alt="">
+            </div>
+        </div>
+        <h2 class="text">APPLE</h2>
+        <div class="bigImage">
+            <img src="apple.png" id="bigImage">
+        </div>
+        <script src="script.js"> </script>
+    </body>
+</html>
