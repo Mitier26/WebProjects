@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>물방울 효과</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="circle">
+            <svg>
+                <filter id="gooey">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+                    <feColorMatrix values = "
+                    1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    0 0 0 50 -10
+                    "/>
+                </filter>
+            </svg>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
