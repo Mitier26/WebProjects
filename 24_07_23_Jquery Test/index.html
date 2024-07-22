@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            background: black;
+            margin: 5px;
+        }
+    </style>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="masonry.pkgd.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            for (let i = 0; i < 100; i++)
+            {
+                $('<div></div>').addClass('box').css({
+                    width: 100,
+                    height: Math.floor(Math.random() * 100)
+                }).appendTo('body');
+            }   
+            $('body').masonry({
+                columnWidth: 110
+            })
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
