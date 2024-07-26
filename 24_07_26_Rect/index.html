@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle and Square</title>
+</head>
+<body>
+    <script>
+        class Rectangle {
+            constructor(width, height) {
+                this.width = width;
+                this.height = height;
+            }
+
+            getPerimeter() {
+                return this.width * 2 + this.height * 2;
+            }
+
+            getArea() {
+                return this.width * this.height;
+            }
+        }
+
+        class Square extends Rectangle {
+            constructor(width, height) {
+                super(width, height);
+            }
+        }
+
+        const square = new Square(10,20);
+
+        console.log("사각형의 둘레", square.getPerimeter());
+        console.log("사각형의 넓이", square.getArea());
+    </script>
+</body>
+</html>
