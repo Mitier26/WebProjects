@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+}
+
+.wrapper {
+    /* border: 1px solid black; */
+    width: 90%;
+    max-width: 1536px;
+    margin-inline: auto;
+    position: relative;
+    height: 100px;
+    margin-top: 5rem;
+    /* overflow: hidden; */
+    mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0));
+}
+
+@keyframes scrollLeft {
+    to {
+        left: -200px;
+    }
+}
+
+.item {
+    width: 200px;
+    height: 100px;
+    background-color: red;
+    border-radius: 6px;
+    position: absolute;
+    left: max(calc(200px * 8), 100%);
+    /* 
+        왼쪽 100%로 하면 부모의 100%의 위치에 배치된다.
+        이곳은 부모상자의 오른쪽 끝의 밖이다.
+    */
+    animation-name: scrollLeft;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: calc((30s / 8 * (8 - var(--i)) * -1));
+}
