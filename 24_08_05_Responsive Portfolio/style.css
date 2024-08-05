@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* 색상, 글꼴 크기 등의 전역 변수를 정의하는 루트 요소 */
+:root {
+    --primary-color: #a855f7; /* 주요 색상 */
+    --primary-color-dark : #9333ea; /* 주요 색상의 어두운 버전 */
+    --secondary-color: #ca8a04; /* 보조 색상 */
+    --text-dark: #1f2937; /* 어두운 텍스트 색상 */
+    --text-light: #6b7280; /* 밝은 텍스트 색상 */
+    --extra-light: #faf5ff; /* 매우 밝은 배경 색상 */
+    --max-width: 1200px; /* 최대 콘텐츠 너비 */
+}
+
+/* 모든 요소의 기본 스타일 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 본문 텍스트 기본 스타일 */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 링크 기본 스타일 */
+a {
+    text-decoration: none; /* 링크 밑줄 제거 */
+}
+
+/* 네비게이션 바 스타일 */
+nav {
+    width: 100%; /* 화면 전체 너비 */
+    position: fixed; /* 고정 위치 */
+    top: 0; /* 상단에 위치 */
+    left: 0; /* 왼쪽에 위치 */
+    background-color: #ffffff; /* 배경 색상 */
+    z-index: 99; /* 다른 요소보다 위에 표시 */
+}
+
+/* 네비게이션 바 내부 콘텐츠 */
+.nav-content {
+    max-width: var(--max-width); /* 최대 너비 */
+    margin: auto; /* 가운데 정렬 */
+    padding: 1.5rem 1rem; /* 패딩 */
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: space-between; /* 좌우 공간 배분 */
+}
+
+/* 로고 스타일 */
+nav .logo a {
+    font-size: 1.5rem; /* 글자 크기 */
+    font-weight: 600; /* 글자 굵기 */
+    color: var(--primary-color); /* 텍스트 색상 */
+    transition: 0.3s; /* 색상 변경 전환 */
+}
+
+/* 로고 호버 시 색상 변경 */
+nav .logo:hover {
+    color: var(--primary-color-dark);
+}
+
+/* 메뉴 버튼 아이콘 스타일 */
+nav .checkbox i {
+    font-size: 2rem; /* 아이콘 크기 */
+    color: var(--primary-color); /* 아이콘 색상 */
+    cursor: pointer; /* 커서 포인터 모양 */
+}
+
+/* 체크박스와 입력 필드 기본 숨김 */
+nav .checkbox,
+nav input {
+    display: none;
+}
+
+/* 네비게이션 메뉴 리스트 스타일 */
+ul {
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+    gap: 1rem; /* 리스트 아이템 간격 */
+    list-style: none; /* 기본 리스트 스타일 제거 */
+    transition: left 0.3s; /* 전환 효과 */
+}
+
+/* 리스트 아이템 링크 스타일 */
+ul li a {
+    padding: 0.5rem 1rem; /* 패딩 */
+    border: 2px solid transparent; /* 테두리 */
+    text-decoration: none; /* 밑줄 제거 */
+    font-weight: 600; /* 글자 굵기 */
+    color: var(--text-dark); /* 글자 색상 */
+    transition: 0.3s; /* 색상 및 테두리 전환 */
+}
+
+/* 링크 호버 시 스타일 */
+ul li a:hover {
+    border-top-color: var(--secondary-color); /* 상단 테두리 색상 변경 */
+    border-bottom-color: var(--secondary-color); /* 하단 테두리 색상 변경 */
+    color: var(--secondary-color); /* 글자 색상 변경 */
+}
+
+/* 섹션 기본 스타일 */
+.section {
+    background-color: var(--extra-light); /* 섹션 배경 색상 */
+}
+
+/* 섹션 내부 컨테이너 */
+.section-container {
+    min-height: 100vh; /* 최소 높이: 전체 화면 높이 */
+    max-width: var(--max-width); /* 최대 너비 */
+    margin: auto; /* 가운데 정렬 */
+    padding: 1rem; /* 패딩 */
+    display: grid; /* 그리드 레이아웃 사용 */
+    grid-template-columns: repeat(2, 1fr); /* 두 개의 열로 나눔 */
+    gap: 4rem; /* 열 간의 간격 */
+}
+
+/* 내용 영역 스타일 */
+.content {
+    display: flex; /* Flexbox 사용 */
+    flex-direction: column; /* 세로 방향 정렬 */
+    justify-content: center; /* 수직 중앙 정렬 */
+}
+
+/* 이미지 영역 스타일 */
+.image {
+    display: grid; /* 그리드 사용 */
+    place-items: center; /* 중앙에 이미지 배치 */
+}
+
+/* 이미지 스타일 */
+.image img {
+    width: min(25rem, 90%); /* 최대 너비 설정 */
+    border-radius: 50%; /* 이미지를 완전한 원으로 만듦 */
+}
+
+/* 부제목 스타일 */
+.subtitle {
+    letter-spacing: 2px; /* 글자 간격 */
+    color: var(--text-light); /* 글자 색상 */
+    font-weight: 600; /* 글자 굵기 */
+    margin-bottom: .5rem; /* 하단 여백 */
+}
+
+/* 제목 스타일 */
+.title {
+    font-size: 2.5rem; /* 글자 크기 */
+    font-weight: 400; /* 글자 굵기 */
+    line-height: 3rem; /* 줄 간격 */
+    color: var(--text-dark); /* 글자 색상 */
+    margin-bottom: 1rem; /* 하단 여백 */
+}
+
+/* 강조된 텍스트 스타일 */
+.title span {
+    font-weight: 600; /* 글자 굵기 */
+}
+
+/* 설명 텍스트 스타일 */
+.description {
+    line-height: 1.5rem; /* 줄 간격 */
+    color: var(--text-light); /* 글자 색상 */
+    margin-bottom: 2rem; /* 하단 여백 */
+}
+
+/* 버튼 그룹 스타일 */
+.action-btns {
+    display: flex; /* Flexbox 사용 */
+    gap: 1rem; /* 버튼 간격 */
+    margin-top: 20px; /* 상단 여백 */
+}
+
+/* 버튼 기본 스타일 */
+.action-btns button {
+    font-size: 1rem; /* 글자 크기 */
+    font-weight: 600; /* 글자 굵기 */
+    letter-spacing: 2px; /* 글자 간격 */
+    padding: 1rem 2rem; /* 패딩 */
+    outline: none; /* 아웃라인 제거 */
+    border: 2px solid var(--primary-color); /* 테두리 색상 */
+    border-radius: 10px; /* 테두리 둥글게 */
+    transition: 0.3s; /* 전환 효과 */
+    cursor: pointer; /* 커서 포인터 모양 */
+}
+
+/* 'Hire Me' 버튼 스타일 */
+.hire-me {
+    background-color: var(--primary-color); /* 배경색 */
+    color: #fff; /* 텍스트 색상 */
+}
+
+/* 'Hire Me' 버튼 호버 스타일 */
+.hire-me:hover {
+    background-color: var(--primary-color-dark); /* 배경색 변경 */
+}
+
+/* 'Portfolio' 버튼 스타일 */
+.portfolio {
+    color: var(--primary-color); /* 텍스트 색상 */
+}
+
+/* 'Portfolio' 버튼 호버 스타일 */
+.portfolio:hover {
+    background-color: var(--primary-color-dark); /* 배경색 변경 */
+    color: #fff; /* 텍스트 색상 변경 */
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (width < 750px) {
+    nav .checkbox {
+        display: block; /* 메뉴 버튼 표시 */
+    }
+
+    ul {
+        position: absolute; /* 절대 위치 */
+        width: 100%; /* 전체 너비 */
+        height: calc(100vh - 85px); /* 화면 높이에서 네비게이션 높이를 뺀 값 */
+        left: -100%; /* 화면 밖으로 숨김 */
+        top: 85px; /* 네비게이션 아래에 위치 */
+        background-color: var(--extra-light); /* 배경색 */
+        flex-direction: column; /* 세로 방향 정렬 */
+        justify-content: center; /* 수직 중앙 정렬 */
+        gap: 3rem; /* 리스트 아이템 간격 */
+    }
+
+    nav #check:checked ~ ul {
+        left: 0; /* 체크박스가 체크되면 리스트를 화면에 표시 */
+    }
+
+    ul li a {
+        font-size: 1.25rem; /* 폰트 크기 증가 */
+    }
+
+    .section-container {
+        padding: 10rem 1rem 5rem 1rem; /* 패딩 조정 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+        grid-template-columns: repeat(1, 1fr); /* 한 열로 변경 */
+    }
+
+    .image {
+        grid-area: 1/1/2/2; /* 이미지의 그리드 위치 조정 */
+    }
+
+    .action-btns {
+        margin: auto; /* 중앙 정렬 */
+        margin-top: 30px; /* 상단 여백 */
+    }
+}
