@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Todo List</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>할 일 목록</h1>
+            
+            <div class="todo-input-area">
+                <div class="todo-input-inner">
+                    <div class="todo-input-text-area">
+                        할일<input type="text" id="todo-title">
+                        테그
+                        <select>
+                            <option value="1">테그1</option>
+                            <option value="2">테그2</option>
+                            <option value="99"><button>+</button></option>
+                        </select>
+                    </div>
+                    <div class="todo-bottom">
+                        중요<input type="checkbox" id="todo-import">
+                        알림<input type="datetime-local" id="todo-date">
+                    </div>
+                </div>
+                <div class="add-area">
+                    <button id="add-btn">추가</button>
+                </div>
+            </div>
+
+            <div class="box"></div>
+
+            <div class="todo-holder">
+                <!-- 여기에 리스트 생김 -->
+                <div id="empty-message" class="empty-message">할 일이 없습니다</div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
