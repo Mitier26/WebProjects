@@ -7,32 +7,36 @@ let addBtn = document.getElementById('add-btn');
 const todoHolder = document.querySelector('.todo-holder');
 const emptyMessage = document.getElementById('empty-message');
 
-todoDate.value = new Date().toISOString().slice(0,16);
+todoDate.value = new Date().toISOString().slice(0, 16);
 
 // 알림창
-// 알림 관환 받기
 Notification.requestPermission();
 
-window.onload = function() {
+
+window.onload = function () {
 
     let todoList = jsonToList();
 
-    showTodoItems(todoList);
+    if (todoList != null) showTodoItems(todoList);
+    else todoList = [];
 
     addBtn.addEventListener("click", () => {
         const todo = {
-            "title" : todoTitle.value,
-            "imp" : todoImport.value,
-            "todoDate" : todoDate.value
+            "title": todoTitle.value,
+            "imp": todoImport.value,
+            "todoDate": todoDate.value
         }
+
+        console.log(todoTitle.value);
+
         todoTitle.value2 = '';
         todoList.push(todo);
 
         localStorage.setItem('todoList', JSON.stringify(todoList));
-        
+
         showTodoItems(todoList);
     });
-    
+
 }
 
 // 저장소에서 list를 가지고 오는 함수
@@ -117,8 +121,7 @@ function showTodoItems(todoList) {
 
         // 삭제 버튼에 클릭 이벤트 추가
         deleteButton.addEventListener('click', () => {
-            if(confirm(`${todoList[index].title}을 삭제하시겠습니까?`))
-            {
+            if (confirm(`${todoList[index].title}을 삭제하시겠습니까?`)) {
                 showNotification(todoList[index].title);
                 todoList.splice(index, 1);
                 localStorage.setItem('todoList', JSON.stringify(todoList));
@@ -141,9 +144,9 @@ function showTodoItems(todoList) {
 
 // 알림 출력 함수
 function showNotification(msg) {
-    const notification = new Notification("목록을 삭제", {body:msg});
+    const notification = new Notification("목록을 삭제", { body: msg });
 
-    setTimeout(function(){
+    setTimeout(function () {
         notification.close();
-    },2000)
+    }, 2000)
 }
