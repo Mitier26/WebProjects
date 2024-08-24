@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    font-family: "Poppins";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 400px;
+    padding: 40px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.card .image {
+    width: 180px;
+    height: 180px;
+    background-color: red;
+    border-radius: 10px;
+    margin-top: -120px;
+    margin-inline: auto;
+    transition: 0.5s;
+}
+
+.card:hover .image {
+    transform: scale(1.1);
+}
+
+.card .content {
+    margin-top: 20px;
+    text-align: center;
+    height: 0px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.card:hover .content {
+    height: 280px;
+}
+
+.card .name {
+    font-size: 35px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.card .job {
+    font-size: 20px;
+    font-weight: 500;
+    color: #999;
+}
+
+.card .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 40px;
+    gap: 15px;
+}
+
+.row .col {
+    font-size: 16px;
+}
+
+.col h2 {
+    font-size: 20px;
+}
+
+.col p {
+    color: #999;
+    font-weight: 500;
+}
+
+.row .btn {
+    width: 100%;
+    height: 50px;
+    background: #4070f4;
+    color: #fff;
+    border: 2px solid #4070f4;
+    border-radius: 18px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.row .btn:nth-child(2) {
+    color: #4070f4;
+    background: none;
+}
