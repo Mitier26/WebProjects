@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <div class="nav">
+      <div class="wrapper">
+        <a href="#" class="logo">megaMenu</a>
+
+        <ul class="menu">
+          <i class="fas fa-close toggle-btn"></i>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Products</a>
+            <div class="mega-menu">
+              <div class="mega-content">
+                <div class="col">
+                  <a href="#">Dropdown Link 1</a>
+                  <a href="#">Dropdown Link 2</a>
+                  <a href="#">Dropdown Link 3</a>
+                  <a href="#">Dropdown Link 4</a>
+                  <a href="#">Dropdown Link 5</a>
+                </div>
+                <div class="col">
+                  <a href="#">Dropdown Link 1</a>
+                  <a href="#">Dropdown Link 2</a>
+                  <a href="#">Dropdown Link 3</a>
+                  <a href="#">Dropdown Link 4</a>
+                  <a href="#">Dropdown Link 5</a>
+                </div>
+                <div class="col">
+                  <a href="#">Dropdown Link 1</a>
+                  <a href="#">Dropdown Link 2</a>
+                  <a href="#">Dropdown Link 3</a>
+                  <a href="#">Dropdown Link 4</a>
+                  <a href="#">Dropdown Link 5</a>
+                </div>
+                <div class="col">
+                  <a href="#">Dropdown Link 1</a>
+                  <a href="#">Dropdown Link 2</a>
+                  <a href="#">Dropdown Link 3</a>
+                  <a href="#">Dropdown Link 4</a>
+                  <a href="#">Dropdown Link 5</a>
+                </div>
+                <div class="col">
+                  <a href="#">Dropdown Link 1</a>
+                  <a href="#">Dropdown Link 2</a>
+                  <a href="#">Dropdown Link 3</a>
+                  <a href="#">Dropdown Link 4</a>
+                  <a href="#">Dropdown Link 5</a>
+                </div>
+                <div class="col">
+                  <a href="#">Dropdown Link 1</a>
+                  <a href="#">Dropdown Link 2</a>
+                  <a href="#">Dropdown Link 3</a>
+                  <a href="#">Dropdown Link 4</a>
+                  <a href="#">Dropdown Link 5</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+
+        <div class="nav-btn">
+          <button class="btn">Login</button>
+          <i class="fas fa-bars toggle-btn"></i>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let toggleBtns = document.querySelectorAll(".toggle-btn");
+      let narBar = document.querySelector('.nav');
+
+      toggleBtns.forEach(toggleBtn => {
+        toggleBtn.addEventListener('click',()=>{
+          narBar.classList.toggle('active');
+        })
+      })
+    </script>
+  </body>
+</html>
