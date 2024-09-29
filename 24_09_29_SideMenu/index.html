@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Side Menu</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav class="sidebar">
+        <div class="sidebar-header">
+          <i class="fab fa-slack"></i>
+          <p>Sidebar Menu</p>
+        </div>
+
+        <div class="menu">
+          <div class="search">
+            <input type="text" placeholder="search..." />
+            <i class="fas fa-search"></i>
+          </div>
+          <a href="#">
+            <i class="fas fa-inbox"></i>
+            <p class="txt">Inbox</p>
+          </a>
+          <a href="#">
+            <i class="fas fa-star"></i>
+            <p class="txt">Starred</p>
+          </a>
+          <a href="#">
+            <i class="fas fa-paper-plane"></i>
+            <p class="txt">Sent</p>
+          </a>
+          <a href="#">
+            <i class="fas fa-file"></i>
+            <p class="txt">Drafts</p>
+          </a>
+          <a href="#">
+            <i class="fas fa-exclamation-circle"></i>
+            <p class="txt">Spam</p>
+          </a>
+          <a href="#">
+            <i class="fas fa-trash-can"></i>
+            <p class="txt">Trash</p>
+          </a>
+        </div>
+        <div class="profile">
+          <img src="" alt="" />
+          <div class="profile-txt">
+            <h2>Malkang Molkang</h2>
+            <p>Game Developer</p>
+          </div>
+        </div>
+        <div class="resizer"></div>
+      </nav>
+    </div>
+
+    <div class="main">
+      <div class="main-header">
+        <i class="fas fa-moon theme-toggle"></i>
+      </div>
+      <div class="main-content">
+        <h1>Resizable Sidebar Menu</h1>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
