@@ -1,0 +1,212 @@
+/* Created by Tivotal */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.loader {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin: auto;
+  transform: scale(3);
+}
+
+.nucleus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+}
+
+.particle {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #0d4ef2;
+  background-image: radial-gradient(
+    37.5% 37.5% at 37.5% 37.5%,
+    rgb(115, 122, 140, 0.5) 48%,
+    rgb(227, 228, 232, 0) 50%
+  );
+  border-radius: 50%;
+  box-shadow: inset -2px -2px 0 
+              rgba(23, 24, 28, 0.25);
+  top: calc(50% - 8px);
+  left: calc(50% - 8px);
+  animation: particleTop 3s linear infinite;
+}
+
+.particle:nth-child(2n) {
+  background: #6e95f7;
+}
+
+@keyframes particleTop {
+  from {
+    transform: rotateY(0) rotateZ(-35deg) translateY(-100%) rotateZ(35deg) rotateY(0);
+  }
+  to {
+    transform: rotateY(-1turn) rotateZ(-35deg)translateY(-100%) rotateZ(35deg) rotateY(1turn);
+  }
+}
+
+.particle:nth-child(n + 4):nth-child(-n + 9) {
+  animation-name: particleMiddle;
+}
+
+@keyframes particleMiddle {
+  from {
+    transform: rotateY(0) rotateZ(90deg) translateY(-100%) rotateZ(-90deg) rotateY(0);
+  }
+  to {
+    transform: rotateY(-1turn) rotateZ(90deg)translateY(-100%) rotateZ(-90deg) rotateY(1turn);
+  }
+}
+
+.particle:nth-child(n + 10):nth-child(-n + 12) {
+  animation-name: particleBottom;
+}
+
+@keyframes particleBottom {
+  from {
+    transform: rotateY(0) rotateZ(-145deg)translateY(-100%) rotateZ(145deg) rotateY(0);
+  }
+  to {
+    transform: rotateY(-1turn) rotateZ(-145deg) translateY(-100%) rotateZ(145deg) rotateY(1turn);
+  }
+}
+
+.particle:last-child {
+  animation: none;
+}
+
+.particle:nth-child(2) {
+  animation-delay: calc(3s * -0.33);
+}
+
+.particle:nth-child(3) {
+  animation-delay: calc(3s * -0.67);
+}
+
+.particle:nth-child(5) {
+  animation-delay: calc(3s * -0.17);
+}
+
+.particle:nth-child(6) {
+  animation-delay: calc(3s * -0.33);
+}
+.particle:nth-child(7) {
+  animation-delay: calc(3s * -0.5);
+}
+
+.particle:nth-child(8) {
+  animation-delay: calc(3s * -0.67);
+}
+.particle:nth-child(9) {
+  animation-delay: calc(3s * -0.83);
+}
+
+.particle:nth-child(11) {
+  animation-delay: calc(3s * -0.33);
+}
+
+.particle:nth-child(12) {
+  animation-delay: calc(3s * -0.67);
+}
+
+.wrapper {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ring {
+  transform-origin: 64px 64px;
+  animation: ring 3s linear infinite;
+}
+
+@keyframes ring {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.ring:nth-child(n + 5):nth-child(-n + 7) {
+  animation-delay: calc(3s * -0.25);
+}
+
+.orbit:first-child {
+  stroke: rgba(13, 78, 242, 0);
+}
+
+.orbit:nth-child(2) {
+  stroke: rgba(13, 78, 242, 0.5);
+}
+
+.orbit:nth-child(3) {
+  stroke: rgba(13, 78, 242, 0.7);
+}
+
+.ring:first-child .orbit:first-child,
+.ring:nth-child(5) .orbit:first-child {
+  stroke: rgba(13, 78, 242, 0.3);
+}
+
+.orbit,
+.electron {
+  animation: orbit 3s linear infinite;
+}
+
+@keyframes orbit {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 580;
+  }
+}
+
+.ring:nth-child(2) .orbit {
+  animation-delay: calc(3s * -0.125);
+}
+
+.ring:nth-child(3) .orbit {
+  animation-delay: calc(3s * -0.25);
+}
+
+.ring:nth-child(4) .orbit {
+  animation-delay: calc(3s * -0.375);
+}
+
+.ring:nth-child(6) .orbit {
+  animation-delay: calc(3s * -0.25);
+}
+
+.ring:nth-child(7) .electron:nth-child(2) {
+  animation-delay: calc(3s * -0.25);
+}
+
+.ring:nth-child(8) .electron:nth-child(2) {
+  animation-delay: calc(3s * -0.125);
+}
+
+.ring:nth-child(8) .electron:nth-child(3) {
+  animation-delay: calc(3s * -0.25);
+}
+
+.ring:nth-child(8) .electron:nth-child(4) {
+  animation-delay: calc(3s * -0.375);
+}
