@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draggable SideMenu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="left wrapper">
+      <nav class="sidebar" id="sidebar" draggable="true">
+        <div class="header">
+          <div class="profile">
+            <img src="img1.jpg" alt="">
+            <h2>Cute</h2>
+          </div>
+        </div>
+
+        <ul>
+          <li>
+            <a href="#"><i class="fas fa-home"></i>Home</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-wallet"></i>Wallet</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-cart-plus"></i>Cart</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-box"></i>Orders</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-headset"></i>Support</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-info-circle"></i>Help</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-cog"></i>Setting</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="right wrapper"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

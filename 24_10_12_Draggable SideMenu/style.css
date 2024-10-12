@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: #222;
+}
+
+.left, .right {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 300px;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.sidebar {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  padding: 20px 0;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  background: #222;
+  width: 85%;
+  height: 80%;
+  position: absolute;
+  right: 0;
+  border-radius: 40px 0 0 40px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.profile::before,
+.profile::after {
+  position: absolute;
+  content: '';
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  right: 0;
+}
+
+.profile::before {
+  top: -30px;
+  box-shadow: 5px 10px #222;
+  border-bottom-right-radius: 50%;
+}
+
+.profile::after {
+  bottom: -30px;
+  box-shadow: 5px -10px #222;
+  border-top-right-radius: 50%;
+}
+
+.profile img {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 15px;
+}
+
+ul {
+  padding: 50px 20px;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  text-decoration: none;
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #222;
+  transition: 0.5s;
+  border-radius: 15px;
+}
+
+ul li a:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+ul li a i {
+  font-size: 20px;
+}
+
+.left.drag, .right.drag {
+  border: 2px dashed #fff;
+}
+
+.right .profile {
+  left: 0;
+  border-radius: 0 40px 40px 0;
+  flex-direction: row-reverse;
+}
+
+.right .profile::before,
+.right .profile::after {
+  left: 0;
+}
+
+.right .profile::before {
+  box-shadow: -5px 10px #222;
+  border-radius: 0;
+  border-bottom-left-radius: 50%;
+}
+
+.right .profile::after {
+  box-shadow: -5px -10px #222;
+  border-radius: 0;
+  border-top-left-radius: 50%;
+}
