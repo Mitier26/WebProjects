@@ -1,0 +1,97 @@
+* {
+  font-family: monospace;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --x: 0px;
+  --y: 0px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.wrapper {
+  position: relative;
+  width: 1130px;
+  height: 400px;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
+
+.card a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 80px;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.card a:hover {
+  color: #ececfb;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 0.5px solid #ffffff1e;
+  border-radius: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gradient {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: radial-gradient(#171825 40%, #63e 50%, #8e64ff, #f92672);
+  mix-blend-mode: darken;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.content i {
+  position: absolute;
+  z-index: 4;
+}
+
+.char-wrapper {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.15;
+  word-wrap: break-word;
+  transform: scale(1.025);
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  --x: 0px;
+  --y: 0px;
+  mask-image: radial-gradient(300px circle at var(--x) var(--y), #000 20%, rgba(0, 0, 0, 0.25), transparent);
+}
+
+.content:hover .char-wrapper {
+  opacity: 1;
+}
